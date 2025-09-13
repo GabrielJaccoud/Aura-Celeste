@@ -363,4 +363,119 @@ footer {
   50% { transform: scale(1.3); opacity: 0.3; }
 }
 
+/* ===== CEP INPUT ===== */
+.cep-input-container {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#cep-input {
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #D4AF37;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  min-width: 200px;
+}
+
+#send-cep-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #D4AF37, #B19CD9);
+  border: none;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#send-cep-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* ===== POPUP DE CONVERSÃO ===== */
+.conversion-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(216, 201, 232, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  max-width: 400px;
+  margin: 20px;
+}
+
+.popup-content p {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.popup-content .btn-mystic {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #D4AF37, #B19CD9);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.close-popup {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== CONTADOR ===== */
+.counter {
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+  color: #666;
+  background: #f9f7ff;
+}
+
+/* ===== QR CODE ===== */
+.qr-code-invisible {
+  width: 40px;
+  height: 40px;
+  opacity: 0.1;
+  margin-top: 10px;
+}
+
 

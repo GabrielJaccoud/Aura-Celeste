@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Add CSS for the popup (should ideally be in style.css, but for quick demo, adding here)
 const popupStyle = document.createElement('style');
-pupupStyle.innerHTML = `
+popupStyle.innerHTML = `
   .conversion-popup {
     position: fixed;
     top: 0;
