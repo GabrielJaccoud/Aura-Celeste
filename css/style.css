@@ -1,0 +1,366 @@
+/* ===== BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: #f9f7ff;
+  color: #333;
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin: 2rem 0 1rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin: 1rem 0 0.5rem;
+}
+
+p, cite {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+cite {
+  font-style: italic;
+  display: block;
+  margin-top: 1rem;
+  color: #777;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  background: linear-gradient(180deg, #e6f2ff, #d8c9e8, #f0e6f7);
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: #D4AF37;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.btn-mystic {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border: 2px solid #D4AF37;
+  background: transparent;
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.1);
+}
+
+.btn-mystic:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+  transform: translateY(-3px);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+/* ===== BLEND SECTION ===== */
+.blend-section {
+  display: flex;
+  align-items: center;
+  padding: 5rem 10%;
+  gap: 5rem;
+  background: #fff;
+}
+
+.blend-image img {
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+}
+
+.blend-text h2 {
+  color: #1a1a2e;
+  margin-bottom: 2rem;
+}
+
+.ingredient {
+  margin-top: 1.8rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid #D4AF37;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.8s ease;
+}
+
+.ingredient.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ingredient strong {
+  display: block;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+  padding: 5rem 10%;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin-bottom: 3rem;
+  color: #1a1a2e;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.gallery-grid img {
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+}
+
+/* ===== BENEFITS ===== */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 5rem 10%;
+  gap: 2rem;
+  background: #f5f0ff;
+  text-align: center;
+}
+
+.benefit {
+  padding: 2rem;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease;
+}
+
+.benefit:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #D4AF37;
+  margin-bottom: 1rem;
+}
+
+.benefit h3 {
+  color: #1a1a2e;
+  margin-bottom: 0.8rem;
+}
+
+/* ===== TESTIMONIAL ===== */
+.testimonial {
+  text-align: center;
+  padding: 4rem 10%;
+  background: #f9f0ff;
+  border-left: 5px solid #D4AF37;
+  margin: 0;
+  font-style: italic;
+  position: relative;
+}
+
+.testimonial::before {
+  content: "\"\";
+  font-size: 5rem;
+  color: rgba(212, 175, 55, 0.1);
+  position: absolute;
+  top: -20px;
+  left: 10%;
+  font-family: Georgia, serif;
+}
+
+/* ===== CTA FINAL ===== */
+.cta-final {
+  background: url('../images/night-sky.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+  background-attachment: fixed;
+}
+
+.cta-final h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cta-final p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-large {
+  padding: 1.3rem 3rem;
+  background: linear-gradient(135deg, #D4AF37, #B19CD9);
+  border: none;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  transition: all 0.4s ease;
+}
+
+.btn-large:hover {
+  box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.8), 0 10px 30px rgba(212, 175, 55, 0.5);
+  transform: translateY(-4px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #16213e;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.logo-small {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: #D4AF37;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.social-icons img {
+  width: 30px;
+  filter: brightness(0.8);
+  transition: filter 0.3s;
+}
+
+.social-icons img:hover {
+  filter: brightness(1);
+}
+
+/* ===== PARTICLES ===== */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .blend-section {
+    flex-direction: column;
+    padding: 3rem 5%;
+    gap: 2rem;
+  }
+
+  .blend-image img {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .btn-mystic,
+  .btn-large {
+    padding: 0.9rem 1.8rem;
+    font-size: 1.1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* ❤️ Pequeno coração pulsando */
+.pulse-heart {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  background-color: #D4AF37;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: pulse 2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.1; }
+  50% { transform: scale(1.3); opacity: 0.3; }
+}
+
+
