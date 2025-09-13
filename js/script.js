@@ -38,17 +38,7 @@ ingredients.forEach(ingredient => {
 });
 
 // CEP input functionality
-const cepInputContainer = document.createElement('div');
-cepInputContainer.className = 'cep-input-container';
-cepInputContainer.innerHTML = `
-  <input type="text" id="cep-input" placeholder="Digite seu CEP para ver o frete..." maxlength="8">
-  <button id="send-cep-btn">Adquirir agora</button>
-`;
 
-const finalCtaSection = document.querySelector('.cta-final');
-if (finalCtaSection) {
-  finalCtaSection.appendChild(cepInputContainer);
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   const sendCepBtn = document.getElementById('send-cep-btn');

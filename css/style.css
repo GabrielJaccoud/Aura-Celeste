@@ -73,12 +73,16 @@ cite {
   align-items: center;
 }
 
-.logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  color: #D4AF37;
+.logo-container {
   margin-bottom: 1rem;
-  letter-spacing: 1px;
+}
+
+.main-logo {
+  width: 150px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  margin: 0 auto;
+  border-radius: 50%; /* Se a logo for circular */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-mystic {
