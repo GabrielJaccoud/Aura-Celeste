@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aura Celeste — Velas Artesanais Místicas</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -15,7 +16,10 @@
       <img src="images/logo.jpg" alt="Aura Celeste Logo" class="main-logo">
     </div>
     <h1>✨ Aura Celeste — Velas Artesanais Místicas ✨</h1>
-    <audio id="background-music" src="LuzdaAlma.mp3" loop autoplay></audio>
+    <audio id="background-music" src="LuzdaAlma.mp3" loop></audio>
+    <button id="play-pause-music" class="music-control">
+      <i class="fas fa-play"></i>
+    </button>
     <p>Mais do que velas — portais de energia, equilíbrio e encanto.</p>
     <a href="https://wa.me/554888228663?text=Ol%C3%A1%21%20Sou%20apaixonada%20por%20velas%20m%C3%ADsticas%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Blend%20M%C3%ADstico%20da%20Aura%20Celeste.%0A%0AQuero%20comprar%20uma%20vela%20com%20entrega%20para%20%5BCEP%20do%20cliente%5D.%0A%0APoss%20pagar%20por%20PIX%20ou%20cart%C3%A3o%3F%0A%0A%28Responda%20com%20%E2%80%98sim%E2%80%99%20e%20me%20envie%20as%20op%C3%A7%C3%B5es%21%29" class="btn-mystic">Adquira a sua</a>
   </header>
@@ -48,13 +52,37 @@
   <!-- Gallery Section -->
   <section class="gallery">
     <h2>📸 Momentos Aura Celeste</h2>
-    <div class="gallery-grid">
-      <img src="images/vela-acesa-1.jpg" alt="Vela acesa com cristais">
-      <img src="images/embalagem.jpg" alt="Embalagem kraft com selo de cera">
-      <img src="images/vela-chama.jpg" alt="Detalhe da chama refletindo no vidro">
-      <img src="images/maos-vela.jpg" alt="Mãos segurando vela com ervas secas">
-      <img src="images/vela-banheiro.jpg" alt="Vela em banheiro com toalhas brancas">
-      <img src="images/vela-janela-lua.jpg" alt="Vela à noite, janela com lua visível">
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+        <div class="carousel-slide active">
+          <img src="images/vela-acesa-1.jpg" alt="Vela acesa com cristais">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/embalagem.jpg" alt="Embalagem kraft com selo de cera">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/vela-chama.jpg" alt="Detalhe da chama refletindo no vidro">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/maos-vela.jpg" alt="Mãos segurando vela com ervas secas">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/vela-banheiro.jpg" alt="Vela em banheiro com toalhas brancas">
+        </div>
+      </div>
+      <button class="carousel-btn prev" onclick="changeSlide(-1)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="carousel-btn next" onclick="changeSlide(1)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div class="carousel-dots">
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+      </div>
     </div>
   </section>
 

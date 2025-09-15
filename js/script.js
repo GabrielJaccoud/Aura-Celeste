@@ -1,3 +1,37 @@
+// Carousel functionality
+let slideIndex = 1;
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.dot');
+  
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+  
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+  
+  if (slides[slideIndex - 1]) {
+    slides[slideIndex - 1].classList.add('active');
+  }
+  if (dots[slideIndex - 1]) {
+    dots[slideIndex - 1].classList.add('active');
+  }
+}
+
+// Auto-advance carousel every 5 seconds
+setInterval(() => {
+  changeSlide(1);
+}, 5000);
+
 // script.js
 const container = document.getElementById('particles');
 
@@ -50,6 +84,21 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open(`https://wa.me/554888228663?text=${encodeURIComponent(message)}`);
       } else {
         alert("Por favor, digite um CEP válido (8 dígitos).");
+      }
+    });
+  }
+
+  const backgroundMusic = document.getElementById('background-music');
+  const playPauseBtn = document.getElementById('play-pause-music');
+
+  if (backgroundMusic && playPauseBtn) {
+    playPauseBtn.addEventListener('click', () => {
+      if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        backgroundMusic.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
       }
     });
   }
