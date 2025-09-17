@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Lora', serif;
-  background-color: #f9f7ff;
+  background: radial-gradient(circle at center, #f9f7ff 0%, #d8c9e8 100%);
   color: #333;
   line-height: 1.7;
   overflow-x: hidden;
@@ -373,6 +373,7 @@ footer {
   height: 100%;
   pointer-events: none;
   z-index: 9999;
+  will-change: transform;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -559,6 +560,15 @@ footer {
   font-style: italic;
   color: #666;
   background: #f9f7ff;
+}
+
+.hidden-signature {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+  color: rgba(212, 175, 55, 0.1);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
 }
 
 /* ===== MUSIC CONTROL ===== */

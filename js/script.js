@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sendCepBtn.addEventListener('click', () => {
       const cep = document.getElementById('cep-input').value.replace(/\D/g, '');
       if (cep.length === 8) {
-        const message = `Olá! Sou apaixonada por velas místicas e gostaria de saber mais sobre o Blend Místico da Aura Celeste.\n\nQuero comprar uma vela com entrega para ${cep}.\n\nPosso pagar por PIX ou cartão?\n\n(Responda com 'sim' e me envie as opções!)`;
+        const message = `Olá! Estou buscando um momento de paz e gostaria de saber mais sobre o Blend Místico da Aura Celeste.\n\nQuero comprar uma vela com entrega para mim.\n\nPosso pagar por PIX ou cartão?\n\n(Responda com 'sim' e me envie as opções!)`;
         window.open(`https://wa.me/554888228663?text=${encodeURIComponent(message)}`);
       } else {
         alert("Por favor, digite um CEP válido (8 dígitos).");
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="close-popup">&times;</span>
           <p>Você merece um momento de paz.</p>
           <p>Acenda sua Aura Celeste hoje.</p>
-          <a href="https://wa.me/554888228663?text=Ol%C3%A1%21%20Sou%20apaixonada%20por%20velas%20m%C3%ADsticas%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Blend%20M%C3%ADstico%20da%20Aura%20Celeste.%0A%0AQuero%20comprar%20uma%20vela%20com%20entrega%20para%20%5BCEP%20do%20cliente%5D.%0A%0APoss%20pagar%20por%20PIX%20ou%20cart%C3%A3o%3F%0A%0A%28Responda%20com%20%E2%80%98sim%E2%80%99%20e%20me%20envie%20as%20op%C3%A7%C3%B5es%21%29" class="btn-mystic">👉 Sim, quero minha vela</a>
+          <a href="https://wa.me/554888228663?text=Ol%C3%A1%21%20Estou%20buscando%20um%20momento%20de%20paz%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Blend%20M%C3%ADstico%20da%20Aura%20Celeste.%0A%0AQuero%20comprar%20uma%20vela%20com%20entrega%20para%20mim.%0A%0APoss%20pagar%20por%20PIX%20ou%20cart%C3%A3o%3F%0A%0A%28Responda%20com%20%E2%80%98sim%E2%80%99%20e%20me%20envie%20as%20op%C3%A7%C3%B5es%21%29" class="btn-mystic">👉 Sim, quero minha vela</a>
         </div>
       `;
       document.body.appendChild(popup);
@@ -223,16 +223,36 @@ if (footer) {
   footer.appendChild(qrCodeContainer);
 }
 
-// Add CSS for QR Code (should ideally be in style.css)
-const qrStyle = document.createElement('style');
-qrStyle.innerHTML = `
-  .qr-code-invisible {
-    width: 40px;
-    height: 40px;
-    opacity: 0.1; /* Invisible effect */
-    margin-top: 10px;
-  }
-`;
-document.head.appendChild(qrStyle);
+// Som sutil ao clicar em qualquer botão CTA — o suspiro da chama
+document.querySelectorAll('.btn-mystic').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const audio = new Audio('sounds/sininho.mp3');
+    audio.volume = 0.3;
+    audio.play().catch(e => console.log("Áudio bloqueado — normal em navegadores"));
+  });
+});
+
+// Movimenta as estrelas como fumaça de incenso ao rolar
+window.addEventListener('scroll', () => {
+  const scrollY = window.pageYOffset;
+  document.getElementById('particles').style.transform = `translateY(${scrollY * 0.05}px)`;
+});
+
+// Ritual de boas-vindas — o primeiro abraço
+const welcome = document.createElement('div');
+welcome.innerHTML = '<p style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);font-family:Cormorant Garamond;font-size:1.5rem;color:#D4AF37;z-index:9999;opacity:0;transition:opacity 1s;">Bem-vinda, alma tranquila.</p>';
+document.body.appendChild(welcome);
+
+setTimeout(() => {
+  welcome.style.opacity = '1';
+}, 500);
+
+setTimeout(() => {
+  welcome.style.opacity = '0';
+}, 2500);
+
+setTimeout(() => {
+  welcome.remove();
+}, 3000);
 
 
