@@ -601,4 +601,46 @@ footer .hidden-signature {
   margin-top: 10px;
 }
 
+.qr-code-container {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.qr-wrapper {
+  display: inline-block;
+  background: rgba(216, 201, 232, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.qr-code {
+  width: 80px;
+  height: 80px;
+  opacity: 0.9;
+  filter: brightness(1.1);
+  transition: all 0.3s ease;
+}
+
+.qr-code:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.qr-text {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #D4AF37;
+  font-style: italic;
+  letter-spacing: 0.2px;
+  font-family: 'Lora', serif;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.qr-text:hover {
+  opacity: 1;
+}
+
 
