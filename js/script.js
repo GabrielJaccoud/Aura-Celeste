@@ -162,6 +162,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Parallax effect for ritual section
+  window.addEventListener('scroll', () => {
+    const ritualSection = document.querySelector('.ritual-section');
+    if (!ritualSection) return;
+
+    const scrollY = window.pageYOffset;
+    const offset = ritualSection.offsetTop;
+    const height = ritualSection.offsetHeight;
+
+    if (scrollY > offset && scrollsY < offset + height) {
+    const progress = (scrollY - offset) / height;
+    const parallaxFactor = 20; // Quanto mais alto, mais movimento
+
+    ritualSection.style.backgroundPositionY = `${progress * parallaxFactor}px`;
+  }
+
   // 🖼️ QR Code no CTA Final — garantindo que ele existe
   if (!document.querySelector('.qr-code-container')) {
     const qrCodeContainer = document.createElement('div');
