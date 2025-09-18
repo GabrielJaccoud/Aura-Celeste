@@ -218,7 +218,8 @@ document.querySelectorAll('.btn-mystic').forEach(btn => {
 // Movimenta as estrelas como fumaça de incenso ao rolar
 window.addEventListener('scroll', () => {
   const scrollY = window.pageYOffset;
-  document.getElementById('particles').style.transform = `translateY(${scrollY * 0.05}px)`;
+  const scrollX = window.pageXOffset * 0.01; // Movimento horizontal sutil
+  document.getElementById('particles').style.transform = `translate(${scrollX}px, ${scrollY * 0.05}px)`;
 });
 
 // Ritual de boas-vindas — o primeiro abraço
