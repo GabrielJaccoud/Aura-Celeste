@@ -527,6 +527,7 @@ footer {
 .hidden-signature {
   text-align: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   font-style: italic;
   color: rgba(212, 175, 55, 0.1);
   font-size: 0.8rem;
