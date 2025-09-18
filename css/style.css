@@ -154,7 +154,8 @@ cite {
 
 .ritual-video-container video {
   width: 100%;
-  height: auto;
+  height: 500px; /* Altura fixa para evitar distorções */
+  object-fit: cover;
   display: block;
   border-radius: 16px;
   transition: transform 0.3s ease;
@@ -172,15 +173,6 @@ cite {
   opacity: 0.1;
   z-index: -1;
   will-change: transform;
-}
-
-.ritual-section {
-  position: relative;
-}
-
-.ritual-section:hover {
-  background-position: 50% 50%;
-  background-size: 110%;
 }
 
 .ritual-section:hover {
