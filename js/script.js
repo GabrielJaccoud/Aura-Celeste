@@ -14,10 +14,10 @@ function showSlide(n) {
   const dots = document.querySelectorAll('.dot');
   
   if (n > slides.length) { slideIndex = 1; }
-  if (n < 1) { slidesIndex = slides.length; }
+  if (n < 1) { slideIndex = slides.length; }
   
   slides.forEach(slide => slide.classList.remove('active'));
-  dots.forEach(dot => dot.classList.removes('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
   
   if (slides[slideIndex - 1]) {
     slides[slideIndex - 1].classList.add('active');
@@ -32,7 +32,7 @@ setInterval(() => {
   changeSlide(1);
 }, 5000);
 
-// ===== PARTICLES (ESTRELAS FLUTuANTES) =====
+// ===== PARTICLES (ESTRELAS FLUTUANTES) =====
 const container = document.getElementById('particles');
 for (let i = 0; i < 15; i++) {
   const star = document.createElement('div');
@@ -43,8 +43,8 @@ for (let i = 0; i < 15; i++) {
   star.style.borderRadius = '50%';
   star.style.opacity = Math.random() * 0.6 + 0.4;
   star.style.left = `${Math.random() * 100}%`;
-  star.styles.top = `${Math.random() * 100}%`;
-  star.styles.animation = `twinkle ${3 + Math.random() * 4}s infinite ease-in-out`;
+  star.style.top = `${Math.random() * 100}%`;
+  star.style.animation = `twinkle ${3 + Math.random() * 4}s infinite ease-in-out`;
   container.appendChild(star);
 }
 
@@ -61,7 +61,7 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entries.target);
+      observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
@@ -73,21 +73,21 @@ ingredients.forEach(ingredient => {
 // ===== MUSIC CONTROL + TODOS OS OUTROS EFEITOS DENTRO DO DOMCONTENTLOADED =====
 document.addEventListener('DOMContentLoaded', () => {
   // 🔊 Controle de música
-const backgroundMusic = document.getElementById('background-music');
-const playPauseBtn = document.getElementById('play-pause-music');
+  const backgroundMusic = document.getElementById('background-music');
+  const playPauseBtn = document.getElementById('play-pause-music');
 
-if (backgroundMusic && playPauseBtn) {
-  playPauseBtn.addEventListener('click', () => {
-    if (backgroundMusic.paused) {
-      backgroundMusic.play();
-      playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-    } else {
-      backgroundMusic.pause();
-      playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-    }
-  });
-}
-  
+  if (backgroundMusic && playPauseBtn) {
+    playPauseBtn.addEventListener('click', () => {
+      if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        backgroundMusic.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    });
+  }
+
   // 🎵 Som de sininho ao clicar em qualquer botão CTA
   document.querySelectorAll('.btn-mystic').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -97,7 +97,7 @@ if (backgroundMusic && playPauseBtn) {
     });
   });
 
-  // 🌬️ Movimentos das estrelas ao rolar
+  // 🌬️ Movimento das estrelas ao rolar
   window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
     const scrollX = window.pageXOffset * 0.01;
@@ -115,7 +115,7 @@ if (backgroundMusic && playPauseBtn) {
           <span class="close-popup">&times;</span>
           <p>Você merece um momento de paz.</p>
           <p>Acenda sua Aura Celeste hoje.</p>
-          <a href=" https://wa.me/554888228663?text=Ol%C3%A1%21%20Estou%20buscando%20um%20momento%20de%20paz%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Blend%20M%C3%ADstico%20da%20Aura%20Celeste.%0A%0AQuero%20comprar%20uma%20vela%20com%20entrega%20para%20mim.%0A%0APoss%20pagar%20por%20PIX%20ou%20cart%C3%A3o%3F%0A%0A%28Responda%20com%20%E2%80%98sim%E2%80%99%20e%20me%20envie%20as%20op%C3%A7%C3%B5es%21%29" class="btn-mystic">👉 Sim, quero minha vela</a>
+          <a href="https://wa.me/554888228663?text=Ol%C3%A1%21%20Estou%20buscando%20um%20momento%20de%20paz%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Blend%20M%C3%ADstico%20da%20Aura%20Celeste.%0A%0AQuero%20comprar%20uma%20vela%20com%20entrega%20para%20mim.%0A%0APoss%20pagar%20por%20PIX%20ou%20cart%C3%A3o%3F%0A%0A%28Responda%20com%20%E2%80%98sim%E2%80%99%20e%20me%20envie%20as%20op%C3%A7%C3%B5es%21%29" class="btn-mystic">👉 Sim, quero minha vela</a>
         </div>
       `;
       document.body.appendChild(popup);
@@ -144,7 +144,7 @@ if (backgroundMusic && playPauseBtn) {
   }, 500);
 
   setTimeout(() => {
-    welcome.styles.opacity = '0';
+    welcome.style.opacity = '0';
   }, 2500);
 
   setTimeout(() => {
@@ -161,23 +161,6 @@ if (backgroundMusic && playPauseBtn) {
       testimonialSection.parentNode.insertBefore(counterElement, testimonialSection.nextSibling);
     }
   }
-
-  // Parallax effect for ritual section
-  window.addEventListener('scroll', () => {
-    const ritualSection = document.querySelector('.ritual-section');
-    if (!ritualSection) return;
-
-    const scrollY = window.pageYOffset;
-    const offset = ritualSection.offsetTop;
-    const height = ritualSection.offsetHeight;
-
-    if (scrollY > offset && scrollY < offset + height) {
-      const progress = (scrollY - offset) / height;
-      const parallaxFactor = 20;
-
-      ritualSection.style.backgroundPositionY = `${progress * parallaxFactor}px`;
-    }
-  });
 
   // 🖼️ QR Code no CTA Final — garantindo que ele existe
   if (!document.querySelector('.qr-code-container')) {
