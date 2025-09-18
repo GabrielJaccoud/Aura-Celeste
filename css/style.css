@@ -213,12 +213,20 @@ cite {
   padding: 5rem 10%;
   gap: 5rem;
   background: #fff;
+  overflow: visible; /* ✅ CORREÇÃO: permitir animação de entrada */
 }
 
 .blend-image img {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   max-width: 500px;
+}
+
+.blend-text {
+  flex: 1;
+  min-width: 300px;
+  opacity: 1; /* ✅ CORREÇÃO: garantir que o container esteja visível */
+  transform: none; /* ✅ CORREÇÃO: evitar transformações que bloqueiam o observer */
 }
 
 .blend-text h2 {
