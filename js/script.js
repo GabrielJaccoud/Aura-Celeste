@@ -73,21 +73,21 @@ ingredients.forEach(ingredient => {
 // ===== MUSIC CONTROL + TODOS OS OUTROS EFEITOS DENTRO DO DOMCONTENTLOADED =====
 document.addEventListener('DOMContentLoaded', () => {
   // 🔊 Controle de música
-  const backgroundMusic = document.getElementById('background-music');
-  const playPauseBtn = document.getElementById('play-pause-music');
+const backgroundMusic = document.getElementById('background-music');
+const playPauseBtn = document.getElementById('play-pause-music');
 
-  if (backgroundMusic && playPauseBtn) {
-    playPauseBtn.addEventListener('click', () => {
-      if (backgroundMusic.paused) {
-        backgroundMusic.play();
-        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-      } else {
-        backgroundMusic.pause();
-        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-      }
-    });
-  }
-
+if (backgroundMusic && playPauseBtn) {
+  playPauseBtn.addEventListener('click', () => {
+    if (backgroundMusic.paused) {
+      backgroundMusic.play();
+      playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    } else {
+      backgroundMusic.pause();
+      playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+    }
+  });
+}
+  
   // 🎵 Som de sininho ao clicar em qualquer botão CTA
   document.querySelectorAll('.btn-mystic').forEach(btn => {
     btn.addEventListener('click', () => {
