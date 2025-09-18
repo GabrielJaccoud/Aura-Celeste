@@ -105,6 +105,110 @@ cite {
   background: rgba(212, 175, 55, 0.1);
 }
 
+/* ===== RITUAL SECTION (PARALLAX) ===== */
+.ritual-section {
+  padding: 5rem 10%;
+  background: linear-gradient(180deg, #f9f7ff 0%, #d8c9e8 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.ritual-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ritual-text {
+  flex: 1;
+  min-width: 300px;
+  font-family: 'Lora', serif;
+  line-height: 1.8;
+}
+
+.ritual-text h2 {
+  font-size: 2.2rem;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.ritual-text p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.ritual-video-container {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.ritual-video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+/* Parallax effect on scroll */
+.ritual-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/night-sky.jpg') no-repeat center center/cover;
+  opacity: 0.1;
+  z-index: -1;
+  will-change: transform;
+}
+
+.ritual-section {
+  position: relative;
+}
+
+.ritual-section:hover {
+  background-position: 50% 50%;
+  background-size: 110%;
+}
+
+.ritual-section:hover {
+  background-position: 50% 50%;
+  background-size: 110%;
+}
+
+/* Animation for the video on hover */
+.ritual-video-container:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ritual-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .ritual-text {
+    order: 1;
+  }
+
+  .ritual-video-container {
+    order: 2;
+  }
+}
+
 /* ===== BLEND SECTION ===== */
 .blend-section {
   display: flex;
