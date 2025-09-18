@@ -32,7 +32,7 @@ setInterval(() => {
   changeSlide(1);
 }, 5000);
 
-// ===== PARTICLES (ESTRELAS FLUTUANTES) =====
+// ===== PARTICLES (ESTRELAS FLUTuANTES) =====
 const container = document.getElementById('particles');
 for (let i = 0; i < 15; i++) {
   const star = document.createElement('div');
@@ -43,8 +43,8 @@ for (let i = 0; i < 15; i++) {
   star.style.borderRadius = '50%';
   star.style.opacity = Math.random() * 0.6 + 0.4;
   star.style.left = `${Math.random() * 100}%`;
-  star.style.top = `${Math.random() * 100}%`;
-  star.style.animation = `twinkle ${3 + Math.random() * 4}s infinite ease-in-out`;
+  star.styles.top = `${Math.random() * 100}%`;
+  star.styles.animation = `twinkle ${3 + Math.random() * 4}s infinite ease-in-out`;
   container.appendChild(star);
 }
 
@@ -61,7 +61,7 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      observer.unobserve(entries.target);
     }
   });
 }, observerOptions);
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 🌬️ Movimento das estrelas ao rolar
+  // 🌬️ Movimentos das estrelas ao rolar
   window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
     const scrollX = window.pageXOffset * 0.01;
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="close-popup">&times;</span>
           <p>Você merece um momento de paz.</p>
           <p>Acenda sua Aura Celeste hoje.</p>
-          <a href="https://wa.me/554888228663?text=Ol%C3%A1%21%20Estou%20buscando%20um%20momento%20de%20paz%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Blend%20M%C3%ADstico%20da%20Aura%20Celeste.%0A%0AQuero%20comprar%20uma%20vela%20com%20entrega%20para%20mim.%0A%0APoss%20pagar%20por%20PIX%20ou%20cart%C3%A3o%3F%0A%0A%28Responda%20com%20%E2%80%98sim%E2%80%99%20e%20me%20envie%20as%20op%C3%A7%C3%B5es%21%29" class="btn-mystic">👉 Sim, quero minha vela</a>
+          <a href=" https://wa.me/554888228663?text=Ol%C3%A1%21%20Estou%20buscando%20um%20momento%20de%20paz%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Blend%20M%C3%ADstico%20da%20Aura%20Celeste.%0A%0AQuero%20comprar%20uma%20vela%20com%20entrega%20para%20mim.%0A%0APoss%20pagar%20por%20PIX%20ou%20cart%C3%A3o%3F%0A%0A%28Responda%20com%20%E2%80%98sim%E2%80%99%20e%20me%20envie%20as%20op%C3%A7%C3%B5es%21%29" class="btn-mystic">👉 Sim, quero minha vela</a>
         </div>
       `;
       document.body.appendChild(popup);
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 500);
 
   setTimeout(() => {
-    welcome.style.opacity = '0';
+    welcome.styles.opacity = '0';
   }, 2500);
 
   setTimeout(() => {
@@ -171,12 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const offset = ritualSection.offsetTop;
     const height = ritualSection.offsetHeight;
 
-    if (scrollY > offset && scrollsY < offset + height) {
-    const progress = (scrollY - offset) / height;
-    const parallaxFactor = 20; // Quanto mais alto, mais movimento
+    if (scrollY > offset && scrollY < offset + height) {
+      const progress = (scrollY - offset) / height;
+      const parallaxFactor = 20;
 
-    ritualSection.style.backgroundPositionY = `${progress * parallaxFactor}px`;
-  }
+      ritualSection.style.backgroundPositionY = `${progress * parallaxFactor}px`;
+    }
+  });
 
   // 🖼️ QR Code no CTA Final — garantindo que ele existe
   if (!document.querySelector('.qr-code-container')) {
@@ -194,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 🔊 Som ao clicar no QR Code (opcional, mas lindo!)
+  // 🔊 Som ao clicar no QR code (opcional, mas lindo!)
   document.querySelector('.qr-code')?.addEventListener('click', () => {
     const audio = new Audio('sounds/sininho.mp3');
     audio.volume = 0.2;
