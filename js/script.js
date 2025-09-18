@@ -14,10 +14,10 @@ function showSlide(n) {
   const dots = document.querySelectorAll('.dot');
   
   if (n > slides.length) { slideIndex = 1; }
-  if (n < 1) { slideIndex = slides.length; }
+  if (n < 1) { slidesIndex = slides.length; }
   
   slides.forEach(slide => slide.classList.remove('active'));
-  dots.forEach(dot => dot.classList.remove('active'));
+  dots.forEach(dot => dot.classList.removes('active'));
   
   if (slides[slideIndex - 1]) {
     slides[slideIndex - 1].classList.add('active');
