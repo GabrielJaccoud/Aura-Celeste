@@ -502,12 +502,21 @@ footer .hidden-signature {
   margin-top: 2rem;
   margin-bottom: 2.5rem;
   font-style: italic;
-  color: rgba(212, 175, 55, 0.3);
+  text-align: center;
+  color: #D4AF37; /* ✅ Dourado antigo — visível e místico */
+  font-family: 'Lora', serif;
   font-size: 0.9rem;
   letter-spacing: 0.6px;
-  font-family: 'Lora', serif;
+  opacity: 0.8; /* ✅ Opacidade suave, mas legível */
   border-top: 1px solid rgba(212, 175, 55, 0.1);
   padding-top: 1.5rem;
+}
+
+footer .signature {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: #D4AF37;
+  opacity: 0.8;
 }
 
 /* ===== PARTICLES ===== */
