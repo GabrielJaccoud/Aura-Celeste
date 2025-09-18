@@ -70,7 +70,7 @@ ingredients.forEach(ingredient => {
   observer.observe(ingredient);
 });
 
-// ===== MUSIC CONTROL + TODOS OS OUTROS EFEITOS DENTRO DO DOMContentLoaded =====
+// ===== MUSIC CONTROL + TODOS OS OUTROS EFEITOS DENTRO DO DOMCONTENTLOADED =====
 document.addEventListener('DOMContentLoaded', () => {
   // 🔊 Controle de música
   const backgroundMusic = document.getElementById('background-music');
@@ -162,23 +162,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 🖼️ QR Code (se não existir no HTML)
+  // 🖼️ QR Code no CTA Final — garantindo que ele existe
   if (!document.querySelector('.qr-code-container')) {
     const qrCodeContainer = document.createElement('div');
     qrCodeContainer.className = 'qr-code-container';
     qrCodeContainer.innerHTML = `
-      <img src="icons/qr.svg" alt="QR Code" class="qr-code-invisible">
-      <p style="font-size: 0.7rem; color: rgba(212, 175, 55, 0.4); margin-top: 8px;">Escaneie para acender sua paz.</p>
+      <div class="qr-wrapper">
+        <img src="icons/qr.svg" alt="QR Code da Aura Celeste" class="qr-code">
+      </div>
+      <p class="qr-text">Escaneie para acender sua paz.</p>
     `;
-    const footer = document.querySelector('footer');
-    if (footer) {
-      footer.appendChild(qrCodeContainer);
-    }
-
-  document.querySelector('.qr-code').addEventListener('click', () => {
-    const audio = new Audio('sounds/sininho.mp3');
-    audio.volume = 0.2;
-    audio.play();
+    const ctaFinal = document.querySelector('.cta-final');
+    if (ctaFinal) {
+      ctaFinal.appendChild(qrCodeContainer);
     }
   }
+
+  // 🔊 Som ao clicar no QR Code (opcional, mas lindo!)
+  document.querySelector('.qr-code')?.addEventListener('click', () => {
+    const audio = new Audio('sounds/sininho.mp3');
+    audio.volume = 0.2;
+    audio.play().catch(e => console.log("Áudio bloqueado — normal em navegadores"));
+  });
 });
