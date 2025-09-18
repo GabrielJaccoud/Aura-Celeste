@@ -178,10 +178,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 🔊 Som ao clicar no QR code (opcional, mas lindo!)
-  document.querySelector('.qr-code')?.addEventListener('click', () => {
-    const audio = new Audio('sounds/sininho.mp3');
-    audio.volume = 0.2;
-    audio.play().catch(e => console.log("Áudio bloqueado — normal em navegadores"));
-  });
-});
+  // 🔊 Som ao clicar no QR
