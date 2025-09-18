@@ -519,6 +519,11 @@ footer .signature {
   opacity: 0.8;
 }
 
+footer .signature:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
 /* ===== PARTICLES ===== */
 #particles {
   position: fixed;
