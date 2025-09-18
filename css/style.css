@@ -338,34 +338,57 @@ cite {
 /* ===== FOOTER ===== */
 footer {
   background: #16213e;
-  color: white;
+  color: #f0e6f7; /* Branco suave, mais legível que branco puro */
   text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
+  padding: 4rem 2rem 2rem; /* Mais espaço acima, menos abaixo */
+  font-family: 'Lora', serif;
 }
 
-.logo-small {
+footer .logo-small {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Maior e mais elegante */
   color: #D4AF37;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
 }
 
-.social-icons {
+footer .social-icons {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 1rem;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-.social-icons img {
-  width: 30px;
-  filter: brightness(0.8);
-  transition: filter 0.3s;
+footer .social-icons img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0.8) grayscale(0.3);
+  transition: all 0.4s ease;
 }
 
-.social-icons img:hover {
-  filter: brightness(1);
+footer .social-icons img:hover {
+  filter: brightness(1.2) grayscale(0);
+  transform: translateY(-3px);
+}
+
+footer p {
+  font-size: 1rem; /* Aumentado de 0.9rem */
+  color: #cdd6e0; /* Cinza claro suave, melhor contraste */
+  margin: 0.5rem 0;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+footer .hidden-signature {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  color: rgba(212, 175, 55, 0.3);
+  font-size: 0.9rem;
+  letter-spacing: 0.6px;
+  font-family: 'Lora', serif;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  padding-top: 1.5rem;
 }
 
 /* ===== PARTICLES ===== */
