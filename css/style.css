@@ -152,7 +152,6 @@ cite {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   position: relative;
   aspect-ratio: 16 / 9;
-  height: 400px; /* ✅ Fix para mobile: altura mínima garantida */
 }
 
 .ritual-video-container video {
@@ -204,7 +203,6 @@ cite {
 
   .ritual-video-container {
     order: 2;
-    height: 300px; /* ✅ Ajuste específico para mobile */
   }
 }
 
@@ -215,7 +213,7 @@ cite {
   padding: 5rem 10%;
   gap: 5rem;
   background: #fff;
-  overflow: visible;
+  overflow: visible; /* ✅ CORREÇÃO: permitir animação de entrada */
 }
 
 .blend-image img {
@@ -227,8 +225,8 @@ cite {
 .blend-text {
   flex: 1;
   min-width: 300px;
-  opacity: 1;
-  transform: none;
+  opacity: 1; /* ✅ CORREÇÃO: garantir que o container esteja visível */
+  transform: none; /* ✅ CORREÇÃO: evitar transformações que bloqueiam o observer */
 }
 
 .blend-text h2 {
@@ -287,7 +285,7 @@ cite {
 }
 
 .carousel-slide.active {
-  display: block !important; /* ✅ FORÇA DISPLAY NO MOBILE */
+  display: block;
 }
 
 .carousel-slide img {
@@ -504,16 +502,12 @@ footer .hidden-signature {
   margin-top: 2rem;
   margin-bottom: 2.5rem;
   font-style: italic;
-  color: #D4AF37; /* ✅ Cor fixa, visível */
+  color: rgba(212, 175, 55, 0.3);
   font-size: 0.9rem;
   letter-spacing: 0.6px;
   font-family: 'Lora', serif;
   border-top: 1px solid rgba(212, 175, 55, 0.1);
   padding-top: 1.5rem;
-}
-
-footer .hidden-signature span {
-  opacity: 0.8; /* ✅ Opacidade aumentada — legível */
 }
 
 /* ===== PARTICLES ===== */
