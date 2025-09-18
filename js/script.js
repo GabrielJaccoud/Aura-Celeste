@@ -174,5 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (footer) {
       footer.appendChild(qrCodeContainer);
     }
+
+  document.querySelector('.qr-code').addEventListener('click', () => {
+    const audio = new Audio('sounds/sininho.mp3');
+    audio.volume = 0.2;
+    audio.play();
+    }
   }
 });
