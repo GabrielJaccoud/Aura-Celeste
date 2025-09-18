@@ -729,6 +729,7 @@ footer .signature:hover {
 .qr-code-container {
   margin-top: 3rem;
   text-align: center;
+  padding: 0 1rem;
 }
 
 .qr-wrapper {
