@@ -78,10 +78,10 @@ cite {
 }
 
 .main-logo {
-  max-width: 200px;
+  max-width: 200px; /* Aumentado de 150px */
   height: auto;
   margin: 0 auto;
-  object-fit: contain;
+  object-fit: contain; /* Garante que a imagem se ajuste sem ser cortada */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -89,7 +89,7 @@ cite {
   margin-top: 2rem;
   padding: 1rem 2rem;
   border: none;
-  background: linear-gradient(135deg, #D4AF37, #B19CD9);
+  background: linear-gradient(135deg, #D4AF37, #B19CD9); /* Usando gradiente para melhor contraste */
   color: white;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
@@ -105,107 +105,6 @@ cite {
   background: rgba(212, 175, 55, 0.1);
 }
 
-/* ===== RITUAL SECTION (PARALLAX) ===== */
-.ritual-section {
-  padding: 5rem 10%;
-  background: linear-gradient(180deg, #f9f7ff 0%, #d8c9e8 100%);
-  position: relative;
-  overflow-x: hidden;
-}
-
-.ritual-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  position: relative;
-  z-index: 1;
-}
-
-.ritual-text {
-  flex: 1;
-  min-width: 300px;
-  font-family: 'Lora', serif;
-  line-height: 1.8;
-}
-
-.ritual-text h2 {
-  font-size: 2.2rem;
-  color: #1a1a2e;
-  margin-bottom: 1.5rem;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.ritual-text p {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 1.5rem;
-  text-align: justify;
-}
-
-.ritual-video-container {
-  flex: 1;
-  min-width: 300px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  position: relative;
-  aspect-ratio: 16 / 9;
-}
-
-.ritual-video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 16px;
-  transition: transform 0.3s ease;
-}
-
-/* Parallax effect on scroll */
-.ritual-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('../images/night-sky.jpg') no-repeat center center/cover;
-  opacity: 0.1;
-  z-index: -1;
-  will-change: transform;
-}
-
-.ritual-section:hover {
-  background-position: 50% 50%;
-  background-size: 110%;
-}
-
-/* Animation for the video on hover */
-.ritual-video-container:hover {
-  transform: scale(1.02);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .ritual-container {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .ritual-text {
-    order: 1;
-  }
-
-  .ritual-video-container {
-    order: 2;
-  }
-}
-
 /* ===== BLEND SECTION ===== */
 .blend-section {
   display: flex;
@@ -213,20 +112,12 @@ cite {
   padding: 5rem 10%;
   gap: 5rem;
   background: #fff;
-  overflow: visible; /* ✅ CORREÇÃO: permitir animação de entrada */
 }
 
 .blend-image img {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   max-width: 500px;
-}
-
-.blend-text {
-  flex: 1;
-  min-width: 300px;
-  opacity: 1; /* ✅ CORREÇÃO: garantir que o container esteja visível */
-  transform: none; /* ✅ CORREÇÃO: evitar transformações que bloqueiam o observer */
 }
 
 .blend-text h2 {
@@ -268,7 +159,7 @@ cite {
 
 .carousel-container {
   position: relative;
-  max-width: 800px;
+  max-width: 800px; /* Aumentado para 800px */
   margin: 0 auto;
 }
 
@@ -290,13 +181,9 @@ cite {
 
 .carousel-slide img {
   width: 100%;
-  height: 500px;
-  object-fit: contain;
-  background-color: #f9f7ff;
+  height: 500px; /* Aumentado para 500px */
+  object-fit: cover;
   border-radius: 12px;
-  display: block;
-  margin: 0 auto;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
 .carousel-btn {
@@ -394,7 +281,7 @@ cite {
 }
 
 .testimonial::before {
-  content: "\"";
+  content: "\"\";
   font-size: 5rem;
   color: rgba(212, 175, 55, 0.1);
   position: absolute;
@@ -447,92 +334,34 @@ cite {
 /* ===== FOOTER ===== */
 footer {
   background: #16213e;
-  color: #f0e6f7;
+  color: white;
   text-align: center;
-  padding: 4rem 2rem 2rem;
-  font-family: 'Lora', serif;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
 }
 
-.footer-poem {
+.logo-small {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #D4AF37;
-  font-style: italic;
-  margin: 1.8rem 0 1rem;
-  letter-spacing: 0.6px;
-  opacity: 0.95;       /* ✅ Opacidade ligeiramente maior — não tão translúcida */
-  text-align: center;
-  font-weight: 700;
-  text-shadow: 0 1px 3px rgba(212, 175, 55, 0.3); /* ✅ Brilho sutil */
-  line-height: 1.4;    /* ✅ Melhora a legibilidade com espaçamento entre linhas */
-  animation: fadeInPoem 1.2s ease-out forwards;
-  opacity: 0;
+  margin-bottom: 1rem;
 }
 
-@keyframes fadeInPoem {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 0.95; transform: translateY(0); }
-}
-
-footer .logo-small {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  color: #D4AF37;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.5px;
-}
-
-footer .social-icons {
+.social-icons {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
-  margin-bottom: 2rem;
+  gap: 2rem;
+  margin-bottom: 1rem;
 }
 
-footer .social-icons img {
-  width: 40px;
-  height: 40px;
-  filter: brightness(0.8) grayscale(0.3);
-  transition: all 0.4s ease;
+.social-icons img {
+  width: 30px;
+  filter: brightness(0.8);
+  transition: filter 0.3s;
 }
 
-footer .social-icons img:hover {
-  filter: brightness(1.2) grayscale(0);
-  transform: translateY(-3px);
-}
-
-footer p {
-  font-size: 1rem;
-  color: #cdd6e0;
-  margin: 0.5rem 0;
-  font-weight: 300;
-  letter-spacing: 0.3px;
-}
-
-footer .hidden-signature {
-  margin-top: 2rem;
-  margin-bottom: 2.5rem;
-  font-style: italic;
-  text-align: center;
-  color: #D4AF37; /* ✅ Dourado antigo — visível e místico */
-  font-family: 'Lora', serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.6px;
-  opacity: 0.8; /* ✅ Opacidade suave, mas legível */
-  border-top: 1px solid rgba(212, 175, 55, 0.1);
-  padding-top: 1.5rem;
-}
-
-footer .signature {
-  margin: 0.5rem 0 0;
-  font-size: 0.9rem;
-  color: #D4AF37;
-  opacity: 0.8;
-}
-
-footer .signature:hover {
-  opacity: 1;
-  transition: opacity 0.3s ease;
+.social-icons img:hover {
+  filter: brightness(1);
 }
 
 /* ===== PARTICLES ===== */
@@ -583,7 +412,7 @@ footer .signature:hover {
   }
 
   .carousel-slide img {
-    height: 300px;
+    height: 300px; /* Ajustado para mobile */
   }
 
   .carousel-btn {
@@ -624,6 +453,44 @@ footer .signature:hover {
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 0.1; }
   50% { transform: scale(1.3); opacity: 0.3; }
+}
+
+/* ===== CEP INPUT ===== */
+.cep-input-container {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#cep-input {
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #D4AF37;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  min-width: 200px;
+}
+
+#send-cep-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #D4AF37, #B19CD9);
+  border: none;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#send-cep-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
 }
 
 /* ===== POPUP DE CONVERSÃO ===== */
@@ -695,6 +562,15 @@ footer .signature:hover {
   background: #f9f7ff;
 }
 
+.hidden-signature {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+  color: rgba(212, 175, 55, 0.1);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
 /* ===== MUSIC CONTROL ===== */
 .music-control {
   position: fixed;
@@ -722,49 +598,137 @@ footer .signature:hover {
 }
 
 .music-control i {
-  margin-left: 2px;
+  margin-left: 2px; /* Ajuste visual para o ícone de play */
 }
 
 /* ===== QR CODE ===== */
-.qr-code-container {
-  margin-top: 3rem;
-  text-align: center;
-  padding: 0 1rem;
+.qr-code-invisible {
+  width: 40px;
+  height: 40px;
+  opacity: 0.1;
+  margin-top: 10px;
 }
 
-.qr-wrapper {
-  display: inline-block;
-  background: rgba(216, 201, 232, 0.1);
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+
+
+/* ===== AMULETO SOLAR SECTION ===== */
+.amuleto-solar-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5rem 10%;
+  gap: 5rem;
+  background: #f9f0ff;
 }
 
-.qr-code {
-  width: 80px;
-  height: 80px;
-  opacity: 0.9;
-  filter: brightness(1.1);
-  transition: all 0.3s ease;
+.amuleto-solar-content {
+  flex: 1;
+  text-align: left;
 }
 
-.qr-code:hover {
-  opacity: 1;
-  transform: scale(1.05);
+.amuleto-solar-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a2e;
 }
 
-.qr-text {
-  margin-top: 1rem;
-  font-size: 0.95rem;
+.amuleto-solar-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.amuleto-solar-content strong {
   color: #D4AF37;
-  font-style: italic;
-  letter-spacing: 0.2px;
-  font-family: 'Lora', serif;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
 }
 
-.qr-text:hover {
-  opacity: 1;
+.amuleto-solar-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.amuleto-solar-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .amuleto-solar-section {
+    flex-direction: column;
+    padding: 3rem 5%;
+    gap: 2rem;
+  }
+
+  .amuleto-solar-content {
+    text-align: center;
+  }
+
+  .amuleto-solar-content h2 {
+    font-size: 2rem;
+  }
+}
+
+/* ===== POPUP DE CONVERSÃO ===== */
+.conversion-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(216, 201, 232, 0.8); /* lilás suave */
+  display: none; /* Escondido por padrão */
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.conversion-popup {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  max-width: 400px;
+  margin: 20px;
+  display: none; /* Escondido por padrão */
+  z-index: 10001;
+}
+
+.popup-content p {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.popup-content .btn-mystic {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #D4AF37, #B19CD9);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.close-popup {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
