@@ -982,19 +982,19 @@ footer {
   align-items: center;
   gap: 15px;
   padding: 1.2rem 3rem;
-  background: linear-gradient(135deg, #4a148c, #7b1fa2);
+  background: linear-gradient(135deg, #D4AF37, #B19CD9); /* Harmonizado com o restante do site */
   color: white;
   border-radius: 50px;
   font-size: 1.1rem;
   font-weight: 500;
-  box-shadow: 0 10px 30px rgba(74, 20, 140, 0.3);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
   transition: all 0.4s ease;
 }
 
 .btn-petala:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(74, 20, 140, 0.4);
-  background: linear-gradient(135deg, #7b1fa2, #4a148c);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, #B19CD9, #D4AF37);
   color: white;
 }
 
