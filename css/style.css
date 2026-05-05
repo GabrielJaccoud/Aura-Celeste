@@ -732,3 +732,129 @@ footer {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* ===== PÉTALA ALQUIMIA SECTION ===== */
+.petala-alquimia-section {
+  padding: 5rem 10%;
+  background: #fff;
+  text-align: center;
+}
+
+.petala-header {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.petala-logo {
+  max-width: 250px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.petala-header h2 {
+  font-size: 2.2rem;
+  color: #4a148c; /* Um roxo mais profundo para combinar com a marca */
+  margin-bottom: 1.5rem;
+}
+
+.petala-products {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.petala-product {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  text-align: left;
+}
+
+.petala-product.reverse {
+  flex-direction: row-reverse;
+}
+
+.product-image {
+  flex: 1;
+}
+
+.product-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.product-info {
+  flex: 1.2;
+}
+
+.product-info h3 {
+  font-size: 1.8rem;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+.benefits-list {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.benefits-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.petala-footer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 3rem;
+  border-top: 1px solid #eee;
+}
+
+.petala-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.petala-badges span {
+  background: #f3e5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #4a148c;
+  font-weight: 500;
+}
+
+.petala-final-text {
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.by-aura {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: #D4AF37;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .petala-product, .petala-product.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .petala-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .product-info h3 {
+    font-size: 1.5rem;
+  }
+}
