@@ -733,128 +733,299 @@ footer {
   to { opacity: 1; }
 }
 
-/* ===== PÉTALA ALQUIMIA SECTION ===== */
+/* ===== PÉTALA ALQUIMIA SECTION (REFINED) ===== */
 .petala-alquimia-section {
-  padding: 5rem 10%;
-  background: #fff;
-  text-align: center;
+  padding: 8rem 5%;
+  background: linear-gradient(to bottom, #ffffff, #fdfaff);
+  position: relative;
+  overflow: hidden;
+}
+
+.petala-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .petala-header {
-  max-width: 800px;
-  margin: 0 auto 4rem;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.petala-logo-wrapper {
+  margin-bottom: 2rem;
+  display: inline-block;
+  position: relative;
 }
 
 .petala-logo {
-  max-width: 250px;
-  margin: 0 auto 2rem;
+  max-width: 180px;
   border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 40px rgba(74, 20, 140, 0.1);
+  transition: transform 0.5s ease;
 }
 
-.petala-header h2 {
-  font-size: 2.2rem;
-  color: #4a148c; /* Um roxo mais profundo para combinar com a marca */
-  margin-bottom: 1.5rem;
+.petala-logo:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.petala-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  color: #2d134d;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.petala-subtitle {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: #D4AF37;
+  letter-spacing: 4px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.petala-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 2.5rem;
+}
+
+.petala-divider::before,
+.petala-divider::after {
+  content: "";
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+}
+
+.petala-divider span {
+  color: #D4AF37;
+  font-size: 1.2rem;
+}
+
+.petala-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: #5a4a75;
+  line-height: 1.8;
+  font-style: italic;
 }
 
 .petala-products {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 
-.petala-product {
+.petala-card {
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
-  align-items: center;
-  gap: 3rem;
+  flex-direction: column;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.petala-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(74, 20, 140, 0.1);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.card-image {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.petala-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 60%, rgba(45, 19, 77, 0.4));
+}
+
+.card-content {
+  padding: 3rem;
   text-align: left;
 }
 
-.petala-product.reverse {
-  flex-direction: row-reverse;
-}
-
-.product-image {
-  flex: 1;
-}
-
-.product-image img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.product-info {
-  flex: 1.2;
-}
-
-.product-info h3 {
-  font-size: 1.8rem;
-  color: #1a1a2e;
-  margin-bottom: 1rem;
-}
-
-.benefits-list {
-  list-style: none;
-  margin-top: 1.5rem;
-}
-
-.benefits-list li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #555;
-}
-
-.petala-footer {
-  max-width: 800px;
-  margin: 0 auto;
-  padding-top: 3rem;
-  border-top: 1px solid #eee;
-}
-
-.petala-badges {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.petala-badges span {
+.product-tag {
+  display: inline-block;
+  padding: 4px 15px;
   background: #f3e5f5;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  color: #4a148c;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.card-content h3 {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+}
+
+.card-content p {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.card-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-benefits span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
   color: #4a148c;
   font-weight: 500;
 }
 
-.petala-final-text {
-  font-style: italic;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.card-benefits i {
+  color: #D4AF37;
+  font-size: 0.8rem;
 }
 
-.by-aura {
+.petala-philosophy {
+  background: #2d134d;
+  color: white;
+  border-radius: 40px;
+  padding: 5rem;
+  margin-bottom: 6rem;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(45, 19, 77, 0.2);
+}
+
+.philosophy-content p {
+  font-size: 1.3rem;
+  color: #e1d5f5;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+
+.petala-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
   color: #D4AF37;
-  margin-bottom: 2rem;
+}
+
+.badge-item i {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.petala-cta-box {
+  text-align: center;
+}
+
+.manifesto {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: #2d134d;
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.signature {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  color: #D4AF37;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.btn-petala {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, #4a148c, #7b1fa2);
+  color: white;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 10px 30px rgba(74, 20, 140, 0.3);
+  transition: all 0.4s ease;
+}
+
+.btn-petala:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(74, 20, 140, 0.4);
+  background: linear-gradient(135deg, #7b1fa2, #4a148c);
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .petala-products {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-image {
+    height: 350px;
+  }
 }
 
 @media (max-width: 768px) {
-  .petala-product, .petala-product.reverse {
-    flex-direction: column;
-    text-align: center;
+  .petala-title {
+    font-size: 2.5rem;
   }
   
-  .petala-header h2 {
-    font-size: 1.8rem;
+  .petala-philosophy {
+    padding: 3rem 2rem;
   }
   
-  .product-info h3 {
-    font-size: 1.5rem;
+  .philosophy-content p {
+    font-size: 1.1rem;
+  }
+  
+  .manifesto {
+    font-size: 1.6rem;
+  }
+  
+  .card-content {
+    padding: 2rem;
   }
 }
