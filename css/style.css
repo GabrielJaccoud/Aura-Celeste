@@ -841,7 +841,7 @@ footer {
 
 .card-image {
   position: relative;
-  height: 400px;
+  height: 300px; /* Reduzido de 400px para 300px */
   overflow: hidden;
 }
 
