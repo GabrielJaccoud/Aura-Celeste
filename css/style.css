@@ -1029,3 +1029,322 @@ footer {
     padding: 2rem;
   }
 }
+
+/* ===== STICKY NAV ===== */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  padding: 1rem 5%;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d134d;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #D4AF37;
+}
+
+.btn-nav {
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(135deg, #D4AF37, #B19CD9);
+  color: white;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+/* ===== REFINED HERO ===== */
+.hero {
+  background: url('../images/night-sky.jpg') no-repeat center center/cover !important;
+  background-attachment: fixed !important;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(45, 19, 77, 0.4) 0%, rgba(22, 33, 62, 0.7) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 3.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.4rem !important;
+  color: #f0e6f7 !important;
+  margin-bottom: 3rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  padding: 1rem 2rem;
+  border: 2px solid #D4AF37;
+  color: white;
+  border-radius: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.2);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Simplificado para mobile por enquanto */
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* ===== TESTIMONIALS SECTION ===== */
+.testimonials-section {
+  padding: 6rem 10%;
+  background: #fdfaff;
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #2d134d;
+  margin-bottom: 1rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+}
+
+.quote-icon {
+  font-size: 4rem;
+  color: rgba(212, 175, 55, 0.1);
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: Georgia, serif;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+  padding: 6rem 10%;
+  background: white;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  padding: 1.5rem 0;
+}
+
+.faq-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d134d;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  padding-top: 1rem;
+  color: #666;
+  display: none; /* Será controlado via JS ou CSS se preferir */
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* ===== NEWSLETTER SECTION ===== */
+.newsletter-section {
+  padding: 4rem 5%;
+  background: #2d134d;
+  color: white;
+  text-align: center;
+}
+
+.newsletter-container h3 {
+  color: #D4AF37;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-container p {
+  color: #e1d5f5;
+  margin-bottom: 2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 250px;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Lora', serif;
+}
+
+.newsletter-form button {
+  padding: 1rem 2.5rem;
+  background: #D4AF37;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #b8952d;
+  transform: scale(1.05);
+}
+
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #128c7e;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+  }
+}
