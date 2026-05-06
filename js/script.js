@@ -172,3 +172,13 @@ document.querySelectorAll('.faq-question').forEach(question => {
     item.classList.toggle('active');
   });
 });
+
+// Sticky Nav Scroll Effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('.sticky-nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
