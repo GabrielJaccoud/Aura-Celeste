@@ -235,7 +235,9 @@ cite {
   width: 100%;
   height: 600px;
   object-fit: cover;
+  object-position: center; /* Garante o enquadramento centralizado */
   transition: transform 0.5s ease;
+  display: block;
 }
 
 .carousel-slide:hover img {
