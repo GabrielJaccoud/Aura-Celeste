@@ -182,3 +182,28 @@ window.addEventListener('scroll', () => {
     nav.classList.remove('scrolled');
   }
 });
+
+// Preloader
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  setTimeout(() => {
+    preloader.style.opacity = '0';
+    preloader.style.visibility = 'hidden';
+  }, 1500);
+});
+
+// Scroll Reveal Logic
+const revealElements = () => {
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const elementVisible = 150;
+    if (elementTop < windowHeight - elementVisible) {
+      el.classList.add('active');
+    }
+  });
+};
+
+window.addEventListener('scroll', revealElements);
+window.addEventListener('load', revealElements);
