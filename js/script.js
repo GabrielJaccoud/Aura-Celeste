@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sendCepBtn.addEventListener("click", () => {
       const cep = document.getElementById("cep-input").value.replace(/\D/g, "");
       if (cep.length === 8) {
-        const message = `Olá! Estou buscando um momento de paz e gostaria de saber mais sobre o Blend Místico da Aura Celeste.\n\nQuero comprar uma vela com entrega para mim.\n\nPosso pagar por PIX ou cartão?\n\n(Responda com \'sim\' e me envie as opções!)`;
+        const message = `Olá Aura! ✨ Tenho interesse em levar a energia mística para minha vida.\n\nMeu CEP é: ${cep}\n\nGostaria de consultar o frete e saber como finalizar meu pedido. Pode me ajudar?`;
         window.open(`https://wa.me/554888228663?text=${encodeURIComponent(message)}`);
       } else {
         alert("Por favor, digite um CEP válido (8 dígitos).");
