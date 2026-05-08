@@ -235,9 +235,14 @@ cite {
   width: 100%;
   height: 600px;
   object-fit: cover;
-  object-position: center; /* Garante o enquadramento centralizado */
+  object-position: center;
   transition: transform 0.5s ease;
   display: block;
+}
+
+/* Ajuste específico para a última foto não cortar o rosto */
+.img-portrait-fix {
+  object-position: center 20% !important; /* Move o foco para cima */
 }
 
 .carousel-slide:hover img {
@@ -1238,7 +1243,7 @@ footer {
 
 .btn-outline {
   padding: 1.2rem 3rem;
-  border: 1px solid rgba(212, 175, 55, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.6);
   color: white;
   border-radius: 50px;
   font-family: 'Cormorant Garamond', serif;
@@ -1246,8 +1251,13 @@ footer {
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: all 0.4s ease;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 280px; /* Garante que o texto tenha espaço */
+  line-height: 1;
 }
 
 .btn-outline:hover {
